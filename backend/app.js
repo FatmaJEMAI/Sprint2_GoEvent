@@ -3,11 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+/* */
+const http=require('http');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users');
+const db=require('./models');
+db.sequelize.sync().then();
 
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,4 +44,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+
+const server = http.createServer(app);
+server.listen(3000, () => {
+  console.log("listening on port 3000");
+});
