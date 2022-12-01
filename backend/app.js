@@ -5,10 +5,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const http=require('http');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var userRouter = require('./routes/user');
 const quizRouter=require('./routes/quiz');
-const questionRouter=require('./routes/question')
-const db=require('./models');
+const questionRouter=require('./routes/question');
+const reservationRouter =require('./routes/reservation');
+const evenementRouter = require('./routes/evenement');
+const categorieRouter= require('./routes/categorie');
+const serviceRouter = require('./routes/service');
+const avisRouter = require('./routes/avis');
+const db=require('./models/index');
 db.sequelize.sync().then();
 
 var app = express();
@@ -22,11 +27,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/user',userRouter);
+app.use('/evenement',evenementRouter);
+app.use('/reservation',reservationRouter);
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/user', userRouter);
 app.use('/quiz',quizRouter);
-app.use('/question',questionRouter);
+// app.use('/question',questionRouter);
+// app.use('/evenement',evenementRouter);
+app.use('/categorie',categorieRouter);
+// app.use('/reservation',reservationRouter);
+// app.use('/service',serviceRouter);
+// app.use('/avis',avisRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

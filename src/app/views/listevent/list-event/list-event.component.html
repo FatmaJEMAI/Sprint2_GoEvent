@@ -1,0 +1,35 @@
+<p>list-event works!</p>
+
+<table class="table table-sm">
+  <thead>
+    <th scope="col"> Nom Evenement</th>
+    <th scope="col">Lieux Evenement</th>
+    <th scope="col">Description Evenement</th>
+    <th scope="col"> Prix</th>
+    <th scope="col">Stock ticket</th>
+    <th scope="col">Date</th>
+    <th scope="col">Type Evenement</th>
+    <th scope="col">Id categorie</th>
+  </thead>
+  <tbody *ngFor="let evenement of list">
+      <tr>
+        <td>{{evenement.nom_event}}</td>
+        <td>{{evenement.lieux_event}}</td>
+        <td>{{evenement.description}}</td>
+        <td>{{evenement.prix}}</td>
+        <td>{{evenement.stock_ticket}}</td>
+        <td>{{evenement.date}}</td>
+        <td>{{evenement.categorieid}}</td>
+        <td>
+          <a class="btn btn-sm btn-success" href="">
+            Edit
+          </a>
+          <button class="btn btn-sm btn-danger" (click)="(evenement)">
+            Delete
+          </button>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+<router-outlet></router-outlet>

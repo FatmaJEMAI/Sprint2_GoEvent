@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       email:{
         type:DataTypes.STRING,
       },
-      pwd:{
+      password:{
         type:DataTypes.STRING,
       },
       num_tel:{
