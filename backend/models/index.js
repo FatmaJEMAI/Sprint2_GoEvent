@@ -1,4 +1,4 @@
- const dbConfig = require("../config/config");
+const dbConfig = require("../config/config");
 
 const Sequelize = require("sequelize");
 
@@ -21,6 +21,8 @@ db.sequelize= sequelize;
 db.user= require("./user")(sequelize,Sequelize);
 db.reservation = require("./reservation")(sequelize,Sequelize);
 db.evenement = require("./evenement")(sequelize,Sequelize);
+db.avis = require("./avis")(sequelize,Sequelize);
+db.service = require("./service")(sequelize,Sequelize);
 db.evenement.hasMany(db.reservation,{as:"reservations",foreignkey:"eventId"});
 db.reservation.belongsTo(db.evenement,{
   as:"evenement"
@@ -31,6 +33,8 @@ db.reservation.belongsTo(db.user);
 //crud event
 db.categorie=require("./categorie")(sequelize,Sequelize);
 db.evenement=require("./evenement")(sequelize,Sequelize);
+db.avis = require("./avis")(sequelize,Sequelize);
+
 db.categorie.hasMany(db.evenement,{as:"evenement",foreignkey:"categorieId"});
 db.evenement.belongsTo(db.categorie,{
   as:"categorie"
@@ -46,3 +50,4 @@ db.question.belongsTo(db.quiz,{
 
 
 module.exports = db;
+

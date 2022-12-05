@@ -30,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/user',userRouter);
 app.use('/evenement',evenementRouter);
 app.use('/reservation',reservationRouter);
-
+app.use('/service',serviceRouter);
+app.use('/avis',avisRouter);
 // app.use('/user', userRouter);
 app.use('/quiz',quizRouter);
 // app.use('/question',questionRouter);
