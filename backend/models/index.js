@@ -46,8 +46,23 @@ db.quiz.hasMany(db.question,{as:"question",foreignkey:"quizId"});
 db.question.belongsTo(db.quiz,{
   as:"quiz"
 })
+//crud jointure avis
 
+db.service.hasMany(db.avis,{as:"avis",foreignkey:"serviceId"});
+db.avis.belongsTo(db.service,{
+  as:"service"
+});
+db.evenement.hasMany(db.avis,{as:"avis",foreignkey:"eventId"});
+db.avis.belongsTo(db.evenement,{
+  as:"evenement"
+});
+db.user.hasMany(db.avis,{foreignkey:"userId"});
+db.avis.belongsTo(db.user);
 
+//jointure service
+db.user.hasMany(db.service,{foreignkey:"userId"});
+
+db.service.belongsTo(db.user);
 
 module.exports = db;
 
