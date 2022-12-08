@@ -11,7 +11,7 @@ const questionRouter=require('./routes/question');
 const reservationRouter =require('./routes/reservation');
 const evenementRouter = require('./routes/evenement');
 const categorieRouter= require('./routes/categorie');
-const serviceRouter = require('./routes/service');
+const serviiceRouter = require('./routes/serviice');
 const avisRouter = require('./routes/avis');
 const db=require('./models/index');
 db.sequelize.sync().then();
@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/user',userRouter);
 app.use('/evenement',evenementRouter);
 app.use('/reservation',reservationRouter);
-app.use('/service',serviceRouter);
+app.use('/serviice',serviiceRouter);
 app.use('/avis',avisRouter);
 // app.use('/user', userRouter);
 app.use('/quiz',quizRouter);
@@ -38,7 +38,7 @@ app.use('/quiz',quizRouter);
 // app.use('/evenement',evenementRouter);
 app.use('/categorie',categorieRouter);
 // app.use('/reservation',reservationRouter);
-// app.use('/service',serviceRouter);
+// app.use('/serviice',serviiceRouter);
 // app.use('/avis',avisRouter);
 
 // catch 404 and forward to error handler

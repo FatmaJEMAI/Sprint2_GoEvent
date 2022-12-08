@@ -1,7 +1,7 @@
 const{DataTypes}= require("sequelize")
 const { sequelize } = require(".")
 module.exports=(sequelize, DataTypes)=>{
-  const service=sequelize.define("service",{
+  const serviice=sequelize.define("serviice",{
     nom:{
       type:DataTypes.STRING,
     },
@@ -19,6 +19,6 @@ module.exports=(sequelize, DataTypes)=>{
       }
 
   });
-  return service;
+  return serviice;
 
   };

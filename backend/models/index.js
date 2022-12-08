@@ -22,7 +22,7 @@ db.user= require("./user")(sequelize,Sequelize);
 db.reservation = require("./reservation")(sequelize,Sequelize);
 db.evenement = require("./evenement")(sequelize,Sequelize);
 db.avis = require("./avis")(sequelize,Sequelize);
-db.service = require("./service")(sequelize,Sequelize);
+db.serviice = require("./serviice")(sequelize,Sequelize);
 db.evenement.hasMany(db.reservation,{as:"reservations",foreignkey:"eventId"});
 db.reservation.belongsTo(db.evenement,{
   as:"evenement"
@@ -48,9 +48,9 @@ db.question.belongsTo(db.quiz,{
 })
 //crud jointure avis
 
-db.service.hasMany(db.avis,{as:"avis",foreignkey:"serviceId"});
-db.avis.belongsTo(db.service,{
-  as:"service"
+db.serviice.hasMany(db.avis,{as:"avis",foreignkey:"serviiceId"});
+db.avis.belongsTo(db.serviice,{
+  as:"serviice"
 });
 db.evenement.hasMany(db.avis,{as:"avis",foreignkey:"eventId"});
 db.avis.belongsTo(db.evenement,{
@@ -59,10 +59,10 @@ db.avis.belongsTo(db.evenement,{
 db.user.hasMany(db.avis,{foreignkey:"userId"});
 db.avis.belongsTo(db.user);
 
-//jointure service
-db.user.hasMany(db.service,{foreignkey:"userId"});
+//jointure serviice
+db.user.hasMany(db.serviice,{foreignkey:"userId"});
 
-db.service.belongsTo(db.user);
+db.serviice.belongsTo(db.user);
 
 module.exports = db;
 
