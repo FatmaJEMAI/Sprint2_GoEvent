@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BackComponent } from './back/back.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
+//import { serviceModule } from '../views/service/service.module';
 
 
 
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule,
     AppRoutingModule
+//serviceModule
   ]
 
   // exports: [
