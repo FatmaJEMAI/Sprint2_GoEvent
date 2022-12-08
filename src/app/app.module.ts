@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackOfficeModule } from './back-office/back-office.module';
 import { FrontOfficeModule } from './front-office/front-office.module';
+import { EvenementModule } from './views/evenement/evenement.module';
+import { QuestionModule } from './views/question/question.module';
+import { QuizModule } from './views/quiz/quiz.module';
+//import { ReservationModule } from './views/reservation/reservation.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,12 @@ import { FrontOfficeModule } from './front-office/front-office.module';
     BrowserModule,
     AppRoutingModule,
     BackOfficeModule,
-    FrontOfficeModule,HttpClientModule
+    FrontOfficeModule,
+    //ReservationModule,
+    EvenementModule,
+    HttpClientModule,
+    QuestionModule,
+    QuizModule
   ],
   providers: [],
   bootstrap: [AppComponent]

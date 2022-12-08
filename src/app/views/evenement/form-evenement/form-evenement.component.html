@@ -1,0 +1,103 @@
+<div id="page-wrapper">
+  <div class="container-fluid">
+      <div class="row">
+          <!-- <div class="col-lg-12">
+              <h1 class="page-header">Dashboard</h1>
+          </div> -->
+          <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
+
+      <!-- /.row -->
+      <div class="row">
+
+              <!-- <div class="panel panel-default"> -->
+
+
+                  <!-- /.panel-body -->
+              <!-- </div> -->
+              <!-- /.panel -->
+              <!-- <div class="panel panel-default"> -->
+                  <!-- <div class="panel-heading"> -->
+
+
+
+                  <!-- /.panel-body -->
+              <!-- </div> -->
+              <!-- /.panel -->
+              <!-- <div class="panel panel-default"> -->
+
+                  <!-- /.panel-body -->
+              <!-- </div> -->
+              <!-- /.panel -->
+
+          <!-- /.col-lg-8 -->
+          <div class="col-lg-4">
+              <div class="panel panel-default">
+
+                  <!-- /.panel-heading -->
+
+                  <!-- /.panel-body -->
+              </div>
+              <!-- /.panel -->
+              <!-- <div class="panel panel-default"> -->
+
+
+                  <!-- /.panel-body -->
+              <!--  -->
+              <!-- /.panel -->
+              <!-- <div class="chat-panel panel panel-default"> -->
+                  <!-- <div class="panel-heading"> -->
+                      <!-- <i class="fa fa-comments fa-fw"></i>
+                      Chat -->
+                  <!-- /.panel-body -->
+                  <div class="panel-footer">
+
+                  <!-- </div> -->
+                  <!-- /.panel-footer -->
+              </div>
+              <!-- /.panel .chat-panel -->
+          </div>
+          <!-- /.col-lg-4 -->
+      </div>
+      <!-- /.row -->
+  </div>
+  <h1>{{action}}  new Event</h1>
+  <form #f>
+    <div class="form-group col-md-6">
+      <label >Evenement Name</label>
+       <input type="text"  minlength="3" required name="title"  [(ngModel)]="evenement.nom_event" placeholder="type title here ... " #nom_event="ngModel"  required pattern="[a-z]{3,8}" class="form-control">
+      <div class="alert alert-danger" *ngIf="nom_event.invalid && nom_event.touched" >
+      <p *ngIf="nom_event.hasError('required')"  >this filed is required</p>
+      <p *ngIf="nom_event.hasError('minlength')">minlength is equal to 3</p>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="mb-3">
+      <label >Evenement Price</label>
+       <input type="number" class="form-control" name="price" [(ngModel)]="evenement.prix" placeholder="type price here ..." #prix="ngModel" required>
+     <div *ngIf="prix.touched && prix.invalid" class="alert alert-danger">
+      Price is required
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="mb-3">
+      <label >lieux evenement </label>
+      <input type="text" class="form-control" name="lieux_event" [(ngModel)]="evenement.lieux_event" placeholder="add picture here ..." #lieux_event=""ngModel="">
+    </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label >evenement quantity</label>
+       <input type="number" class="form-control" name="quantity" [(ngModel)]="evenement.stock_ticket" placeholder="type quantity here ..." stock_ticket="ngModel" required>
+        <div *ngIf="nom_event.touched && nom_event.invalid" class="alert alert-danger" >
+        Quantity is required
+    </div>
+    <br>
+     <button  [disabled]="f" class="btn btn-success" (click)="saveEvenement()"> {{action}}</button> <br>
+     <!-- <button class="btn btn-danger" (click)="()"> {{action}}</button> -->
+  <!-- </form> -->
+  <!-- /.container-fluid -->
+</div>
+ <router-outlet></router-outlet>
+

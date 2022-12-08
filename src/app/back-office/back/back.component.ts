@@ -30,8 +30,8 @@ const SCRIPT_PATH_LIST =[
  "../../../assets/BackOffice/js/morris-data.js",
  "../../../assets/BackOffice/js/raphael.min.js",
  "../../../assets/BackOffice/js/startmin.min.js",
-  
-  ] 
+
+  ]
 
 @Component({
   selector: 'app-back',
@@ -48,14 +48,14 @@ export class BackComponent implements OnInit {
       const scriptElement = this.ScriptServiceService.loadJsScript(this.renderer, e);
       scriptElement.onload = () => {
        console.log('loaded');
-     
+
       }
       scriptElement.onerror = () => {
         console.log('Could not load the script!');
       }
 
     })
-   
+
   }
 
 

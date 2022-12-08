@@ -1,0 +1,35 @@
+<section class="about section-padding" id="section_2">
+
+
+          <table class="table table-sm">
+            <thead>
+              <th scope="col"> nom </th>
+              <th scope="col">userId</th>
+
+            </thead>
+            <tbody *ngFor="let quiz of list">
+                <tr>
+                  <td>{{quiz.nom}}</td>
+                  <td>{{quiz.userId}}</td>
+
+                  <td>
+                    <a class="btn btn-sm btn-success" href="">
+                      Edit
+                    </a>
+                    <button class="btn btn-sm btn-danger" (click)="(quiz)">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+
+            </tbody>
+          </table>
+
+        </section>
+
+
+
+
+<router-outlet></router-outlet>
+
+

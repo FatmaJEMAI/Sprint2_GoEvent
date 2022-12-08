@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const http=require('http');
+var cors = require('cors');
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 const quizRouter=require('./routes/quiz');
@@ -17,7 +18,7 @@ const db=require('./models/index');
 db.sequelize.sync().then();
 
 var app = express();
-
+app.use(cors());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -34,7 +35,7 @@ app.use('/service',serviceRouter);
 app.use('/avis',avisRouter);
 // app.use('/user', userRouter);
 app.use('/quiz',quizRouter);
-// app.use('/question',questionRouter);
+ app.use('/question',questionRouter);
 // app.use('/evenement',evenementRouter);
 app.use('/categorie',categorieRouter);
 // app.use('/reservation',reservationRouter);
