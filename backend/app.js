@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const http=require('http');
+var cors = require('cors')
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 const quizRouter=require('./routes/quiz');
@@ -14,10 +15,11 @@ const categorieRouter= require('./routes/categorie');
 const serviiceRouter = require('./routes/serviice');
 const avisRouter = require('./routes/avis');
 const db=require('./models/index');
+
 db.sequelize.sync().then();
 
 var app = express();
-
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
