@@ -1,0 +1,125 @@
+
+<!-- <section class="about section-padding" id="section_2"> -->
+
+<div class="container">
+
+
+
+  <!-- <div class="row"> -->
+
+<!-- <div class="col-lg-2 col-6 d-flex flex-column"> -->
+<!-- <div class="about-thumb bg-white shadow-lg">
+
+<div class="about-info">
+  <h2 class="#f9c10b"> Nos Services </h2>
+    <h2 class="#f9c10b"> Nos Services </h2>
+</div>
+</div>
+
+ <div class="row h-100"></div> -->
+
+<!-- </div> -->
+
+<!-- </div> -->
+<!-- </div> -->
+
+<!-- <table class="table table-sm">
+              <thead>
+                <th scope="col"> Nom </th>
+                <th scope="col">type</th>
+                <th scope="col">Description </th>
+                <th scope="col"> contact</th>
+
+              </thead>
+
+              <tbody *ngFor="let serviice of list">
+                  <tr>
+                    <td>{{serviice.nom}}</td>
+                    <td>{{serviice.type}}</td>
+                    <td>{{serviice.description}}</td>
+                    <td>{{serviice.contact}}</td>
+                  </tr>
+              </tbody>
+
+            </table> -->
+<!-- </section> -->
+
+<section class="about section-padding" id="section_2">
+
+
+  <h2>Nos Services</h2>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12 d-flex flex-column"> -->
+
+        <!-- <div class="about-thumb bg-white shadow-lg">
+
+                            <div class="about-info">
+                                <small class="small-title">details <strong class="text-warning"></strong></small>
+
+                                <h2 class="mb-3">ALL Services</h2>
+
+
+
+
+                            </div>
+                        </div> -->
+
+        <!-- <div class="row h-100"></div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <table class="table table-sm">
+                      <thead>
+                        <th scope="col"> Nom </th>
+                        <th scope="col">type</th>
+                        <th scope="col">Description </th>
+                        <th scope="col"> contact</th>
+                        <th scope="col">userId</th>
+
+                      </thead>
+                      <tbody *ngFor="let serviice of list">
+                          <tr>
+                            <td>{{serviice.nom}}</td>
+                            <td>{{serviice.type}}</td>
+                            <td>{{serviice.description}}</td>
+                            <td>{{serviice.contact}}</td>
+                            <td>{{serviice.userId}}</td>
+                            <td>
+                              <a class="btn btn-sm btn-success" href="">
+                                Edit
+                              </a>
+                              <button class="btn btn-sm btn-danger" (click)="(serviice)">
+                                Delete
+                              </button>
+                            </td>
+                          </tr>
+
+                      </tbody> -->
+  <!-- </table> -->
+
+  <!-- <h1>les services</h1> -->
+
+  <form action="/action_page.php">
+    <fieldset class="about" *ngFor="let serviice of list">
+      <legend></legend>
+      <h5>nom :</h5>
+      <p>{{ serviice.nom }}</p>
+      <h5>type :</h5>
+      <p>{{ serviice.type }}</p>
+      <h5>description :</h5>
+      <p>{{ serviice.description }}</p>
+      <h5>contact :</h5>
+      <p>{{ serviice.contact }}</p>
+
+      <a class=" btn btn-sm btn-success" [routerLink]="['/updateserviice',serviice.id]"> Edit </a>
+      <button class=" btn btn-sm btn-danger"  (click)="delete(serviice)">Delete</button>
+    </fieldset>
+
+  </form>
+
+
+<router-outlet></router-outlet>
+
+<router-outlet></router-outlet>
