@@ -13,15 +13,21 @@ const reservationRouter =require('./routes/reservation');
 const evenementRouter = require('./routes/evenement');
 const categorieRouter= require('./routes/categorie');
 const serviceRouter = require('./routes/service');
+const quizresRouter = require('./routes/quizres');
 const avisRouter = require('./routes/avis');
 const db=require('./models/index');
+const quizres = require('./models/quizres');
 db.sequelize.sync().then();
 
 var app = express();
-app.use(cors());
+app.use(cors({
+  origin:'http://localhost:4200'
+}));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -35,9 +41,10 @@ app.use('/service',serviceRouter);
 app.use('/avis',avisRouter);
 // app.use('/user', userRouter);
 app.use('/quiz',quizRouter);
- app.use('/question',questionRouter);
+app.use('/question',questionRouter);
 // app.use('/evenement',evenementRouter);
 app.use('/categorie',categorieRouter);
+app.use('/quizres',quizresRouter);
 // app.use('/reservation',reservationRouter);
 // app.use('/service',serviceRouter);
 // app.use('/avis',avisRouter);

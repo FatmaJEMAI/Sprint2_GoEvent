@@ -16,20 +16,20 @@ export class quizService {
   getListquiz(){
     return this.http.get<quiz[]>(this.url+"affiche")
   }
-  addquiz(p:quiz){
-  return this.http.post(this.url,p)
+
+  addquiz(p:any){
+  return this.http.post(this.url+'add',p)
 }
   deletequiz(id:number){
-  return this.http.delete(this.url+id)
+  return this.http.delete(this.url+'remove/'+id)
 }
   updatequiz(id:number,p:quiz){
-  return this.http.put(this.url+id,p)
+  return this.http.put(this.url+'update/'+id,p)
 }
-getquizById(id:number){
+getquizById(id:any){
   return this.http.get<quiz>(this.url+id)
 }
    }
-
 
 
 

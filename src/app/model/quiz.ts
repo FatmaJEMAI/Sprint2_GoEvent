@@ -8,4 +8,9 @@ export class quiz{
   userId:number
 
 
+
+
+
+
+
 }

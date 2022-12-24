@@ -13,16 +13,17 @@
                   <td>{{quiz.userId}}</td>
 
                   <td>
-                    <a class="btn btn-sm btn-success" href="">
+                    <a class="btn btn-sm btn-success" [routerLink]="['/updatequiz',quiz.id]" >
                       Edit
                     </a>
-                    <button class="btn btn-sm btn-danger" (click)="(quiz)">
+                    <button class="btn btn-sm btn-danger" (click)="delete(quiz)">
                       Delete
                     </button>
                   </td>
                 </tr>
 
             </tbody>
+
           </table>
 
         </section>

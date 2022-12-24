@@ -1,0 +1,190 @@
+{
+    "addquestions":[
+        {
+            "questiondata":"what is the postal code of kef?",
+
+         "options":
+          [{
+                "text":"7100",
+                "correct":true
+
+            },
+            {
+                "text":"7170"
+            },
+            {
+                "text":"7101"
+            }
+        ]
+
+        } ,
+
+
+        {
+                "questiondata":"what is the Date of creation Governorate of Kef ?",
+                "options":[{
+                    "text":"September 1957"
+
+                  },
+                  {
+                    "text":"September 1956",
+                    "correct":true
+                  },
+                  {
+                    "text":"September 1958"
+                  }
+                ]
+},
+
+
+
+{
+  "questiondata":"How many delegations in the sate of Kef  ?",
+  "options":[{
+      "text":"12",
+      "correct":true
+
+    },
+    {
+      "text":"24"
+
+    },
+    {
+      "text":"13"
+    }
+  ]
+},
+
+
+
+
+{
+  "questiondata":"When was the Kef Kasbah founded ? ",
+  "options":[{
+      "text":"1600",
+      "correct":true
+
+    },
+    {
+      "text":"1645"
+
+    },
+    {
+      "text":"1603"
+    }
+  ]
+},
+
+
+
+
+{
+  "questiondata":"Haw many monuments are there in El Kef ? ",
+  "options":[{
+      "text":"35"
+
+
+    },
+    {
+      "text":"36"
+
+    },
+    {
+      "text":"38",
+      "correct":true
+    }
+  ]
+},
+
+
+
+{
+  "questiondata":"Haw far is El Kef from Tunisia ?",
+  "options":[{
+      "text":"120"
+
+
+    },
+    {
+      "text":"175",
+      "correct":true
+
+    },
+    {
+      "text":"135"
+    }
+  ]
+},
+
+
+{
+  "questiondata":"What are the most famous food in Kef  ?",
+  "options":[{
+      "text":"Borzghen",
+      "correct":true
+
+
+    },
+    {
+      "text":"Kouskous"
+
+
+    },
+    {
+      "text":"lablebi"
+    }
+  ]
+},
+
+
+{
+  "questiondata":"What is the area of Kef  ?",
+  "options":[{
+      "text":"4569km²"
+
+
+
+    },
+    {
+      "text":"4786km²"
+
+
+    },
+    {
+      "text":"4965km²",
+      "correct":true
+    }
+  ]
+},
+
+
+
+
+
+        {
+            "questiondata":"how much the Number of inhabitants of the kef ?",
+            "options":[{
+                "text":" 243.178"
+
+              },
+              {
+                "text":"255.178",
+                "correct":true
+              },
+              {
+                "text":"243.156",
+                "correct":true
+              }
+            ]
+
+
+    }
+
+
+
+
+    ]
+
+
+  }
+

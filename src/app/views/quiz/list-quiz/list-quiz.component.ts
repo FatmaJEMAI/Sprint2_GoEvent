@@ -9,6 +9,8 @@ import { quizService } from 'src/app/services/quiz.service';
 })
 export class ListquizComponent implements OnInit {
 list: quiz[];
+quiz:quiz;
+
 
   constructor( private quizservice:quizService) { }
 
@@ -18,15 +20,12 @@ list: quiz[];
   }
 delete(quiz:quiz){
 this.quizservice.deletequiz(quiz.id).subscribe(
-  ()=>{
+  (data:any)=>{
 
     let i= this.list.indexOf(quiz);
     this.list.splice(i,1);
    }
 );
 }
-
-
-
 
 }

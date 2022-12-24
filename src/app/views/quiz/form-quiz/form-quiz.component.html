@@ -1,4 +1,5 @@
 
+<form #f="ngForm">
 <div id="page-wrapper">
   <div class="container-fluid">
       <div class="row">
@@ -63,22 +64,26 @@
       </div>
       <!-- /.row -->
   </div>
-  <h1>{{action}}  new Quiz</h1>
+  <h1>add new Quiz</h1>
   <form #f>
     <div class="form-group col-md-6">
-      <label >nom</label>
-       <input type="text"  minlength="3" required name="title"  [(ngModel)]="quiz.nom" placeholder="type title here ... " #nom_event="ngModel"  required pattern="[a-z]{3,8}" class="form-control">
-      <div class="alert alert-danger" *ngIf="nom_event.invalid && nom_event.touched" >
-      <p *ngIf="nom_event.hasError('required')"  >this filed is required</p>
-      <p *ngIf="nom_event.hasError('minlength')">minlength is equal to 3</p>
+        <div class="mb-3">
+        <label >nom</label>
+
+         <input type="text"   class="form-control"  placeholder="entrer le type ..." [(ngModel)]="quiz.nom" #t="ngModel" name="nom" required >
+         <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+            <p *ngIf="t.hasError('required')">type est obligatoire </p>
+            </div>
       </div>
-    </div>
+      </div>
 
     <br>
-     <button  [disabled]="f" class="btn btn-success" (click)="savequiz()"> {{action}}</button> <br>
+     <button   class="btn btn-success" (click)="savequiz()"> add</button> <br>
      <!-- <button class="btn btn-danger" (click)="()"> {{action}}</button> -->
-   </form> -->
-  <!-- /.container-fluid -->
-</div>
- <router-outlet></router-outlet>
 
+  <!-- /.container-fluid -->
+
+ <router-outlet></router-outlet>
+</form>
+</div>
+</form>
