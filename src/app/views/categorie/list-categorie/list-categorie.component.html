@@ -1,0 +1,45 @@
+<section class="about section-padding" id="section_2">
+  <!-- <div class="container">
+      <div class="row">
+
+          <div class="col-lg-6 col-12 d-flex flex-column">
+              <div class="about-thumb bg-white shadow-lg">
+
+                  <div class="about-info">
+
+                      <h2 class="mb-3">ALL Categories</h2>
+
+                  </div>
+              </div>
+
+
+          </div>
+
+      </div>
+  </div> -->
+
+          <table class="table table-sm">
+            <thead>
+              <th scope="col"> Category Name</th>
+
+            </thead>
+            <tbody *ngFor="let categorie of list">
+                <tr>
+                  <td>{{categorie.nom}}</td>
+                  <td>
+                    <a class="btn btn-sm btn-success" [routerLink]="['/editecategorie',categorie.id]" >
+                      Update
+                    </a>
+                    <button class="btn btn-sm btn-danger" (click)="delete(categorie)">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+
+            </tbody>
+          </table>
+
+        </section>
+
+
+

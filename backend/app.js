@@ -4,19 +4,23 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const http=require('http');
+var cors = require('cors');
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 const quizRouter=require('./routes/quiz');
 const questionRouter=require('./routes/question');
 const reservationRouter =require('./routes/reservation');
-const evenementRouter = require('./routes/evenement');
+const evenementRouter=require('./routes/evenement');
 const categorieRouter= require('./routes/categorie');
-const serviceRouter = require('./routes/service');
-const avisRouter = require('./routes/avis');
+//const serviceRouter = require('./routes/service');
+//const avisRouter = require('./routes/avis');
 const db=require('./models/index');
 db.sequelize.sync().then();
 
 var app = express();
+app.use(cors({
+  origin: 'http://localhost:4200'
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,7 +37,7 @@ app.use('/reservation',reservationRouter);
 
 // app.use('/user', userRouter);
 app.use('/quiz',quizRouter);
-// app.use('/question',questionRouter);
+app.use('/question',questionRouter);
 // app.use('/evenement',evenementRouter);
 app.use('/categorie',categorieRouter);
 // app.use('/reservation',reservationRouter);

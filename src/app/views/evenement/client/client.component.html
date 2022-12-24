@@ -1,0 +1,65 @@
+<section class="about section-padding" id="section_2">
+    <section>
+    <div class= "container">
+        <div class="row">
+
+            <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                <div class="about-image-wrap h-100">
+                    <img src="https://s3.amazonaws.com/eventbrite-s3/marketing/landingpages/assets/photography/distribution-header-footer.jpg" class="img-fluid about-image" alt="">
+
+                    <div class="about-image-info">
+                        <h4 class="text-white">We Help You  to Create A Memorable Event With Lasting Impression</h4>
+
+                        <!-- <p class="text-white mb-0">You can freely use Waso Strategy for your website project. Thank you for visiting Tooplate.</p> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-6 d-flex flex-column">
+                <small class="small-title">details <strong class="text-warning"></strong></small>
+
+                <h2 class="mb-3">ALL EVENTS :</h2>
+
+                <div class="about-thumb bg-white shadow-lg">
+
+                  <div class="about-info">
+                      <table class="table">
+                        <tr>
+                          <th scope="col"> Name Event</th>
+                         <th scope="col">Place Event</th>
+                         <th scope="col">Description </th>
+                          <th scope="col"> Price</th>
+                          <th scope="col">Quantity</th>
+                         <th scope="col">Date</th>
+                         <th scope="col">Type Event</th>
+                        </tr><br>
+                        <tbody *ngFor="let evenement of list">
+                          <tr>
+                            <td>{{evenement.nom_event}}</td>
+                            <td>{{evenement.lieux_event}}</td>
+                            <td>{{evenement.description}}</td>
+                            <td>{{evenement.prix}}</td>
+                            <td>{{evenement.stock_ticket}}</td>
+                            <td>{{evenement.date}}</td>
+                            <td>{{evenement.type_event}}</td> <br>
+                             <td><button class=" custom-bg-primary " routerLink="/reservations">Book your Spot</button></td>
+                      </table>
+                  <br>
+                  <!-- <button class="custom-btn btn custom-bg-primary text-center" routerLink="/reservations">Book your Spot</button> -->
+
+                  </div>
+              </div>
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+

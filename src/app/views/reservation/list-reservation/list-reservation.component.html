@@ -1,0 +1,108 @@
+<section class="about section-padding" id="section_2">
+  <div class="container">
+      <div class="row">
+
+          <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+
+          </div>
+
+          <div class="col-lg-12 col-12 d-flex flex-column">
+              <div class="about-thumb bg-white shadow-lg">
+
+                  <div class="about-info">
+                      <h2 class="mb-3">ALL reservation</h2>
+                      </div>
+                    </div>
+              </div>
+          </div>
+
+      </div>
+
+
+          <table class="table table-sm">
+            <thead>
+              <th scope="col"> Type Reservation</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">EvenementId</th>
+              <th scope="col"> UserId </th>
+
+            </thead>
+            <tbody *ngFor="let reservation of list">
+                <tr>
+                  <td>{{reservation.type_reservation}}</td>
+                  <td>{{reservation.quantite_ticket}}</td>
+                  <td>{{reservation.evenementId}}</td>
+                  <td>{{reservation.userId}}</td>
+
+                  <td>
+                    <a class="btn btn-sm btn-success" [routerLink]="['/modifereservation',reservation.id]" >
+                      Edit
+                    </a>
+                    <button class="btn btn-sm btn-danger" (click)="delete(reservation)" >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+
+            </tbody>
+          </table>
+
+          <!-- <div class="angular-reservation-box">
+            <table active="reservationCtrl.selectedTab" justified="true">
+                <tbody index="0">
+                    <tr>
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true" class="angular-reservation-icon-size"></span>
+                        <h5 ng-if="reservationCtrl.secondTabLocked">{{"date"}}</h5>
+                        <h5 ng-if="!reservationCtrl.secondTabLocked"></h5>
+                    </tr>
+
+                    <div ng-include="'loader.html'" class="text-center" style="min-height: 250px" ng-if="reservationCtrl.loader"></div>
+
+                    <div ng-include="reservationCtrl.datepickerTemplate" ng-if="!reservationCtrl.loader"></div>
+                </tbody>
+
+                <tbody index="1" disable="reservationCtrl.secondTabLocked">
+                    <tr>
+                        <span class="glyphicon glyphicon-time" aria-hidden="true" class="angular-reservation-icon-size"></span>
+                        <h5 ng-if="reservationCtrl.thirdTabLocked">{{"time"}}</h5>
+                        <h5 ng-if="!reservationCtrl.thirdTabLocked"></h5>
+                    </tr>
+
+                    <div ng-include="'loader.html'" class="text-center" style="min-height: 250px" ng-if="reservationCtrl.loader"></div>
+
+                    <div class="angular-reservation-availableHour" ng-if="!reservationCtrl.loader && reservationCtrl.availableHours.length > 0">
+                        <div ng-include="reservationCtrl.availableHoursTemplate"></div>
+                    </div>
+
+                    <div ng-if="!reservationCtrl.loader && reservationCtrl.availableHours.length == 0">
+                        <div ng-include="reservationCtrl.noAvailableHoursTemplate"></div>
+                    </div>
+                </tbody>
+
+                <tbody index="2" disable="reservationCtrl.thirdTabLocked">
+                    <tr>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true" class="angular-reservation-icon-size"></span>
+                        <h5>{{"client" }}</h5>
+                    </tr>
+
+                    <form class="form-horizontal" name="reserveForm" novalidate
+                          ng-submit="reserveForm.$valid && reservationCtrl.reserve(reservationCtrl.selectedDate, reservationCtrl.selectedHour, reservationCtrl.userData)">
+                        <div ng-include="'loader.html'" class="text-center" style="min-height: 250px" ng-if="reservationCtrl.loader"></div>
+
+                        <fieldset ng-if="!reservationCtrl.loader">
+                            <div ng-include="reservationCtrl.clientFormTemplate"></div>
+                        </fieldset>
+                    </form>
+                </tbody>
+            </table>
+        </div> -->
+
+
+        </section>
+
+
+
+
+<router-outlet></router-outlet>
+
+

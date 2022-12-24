@@ -21,7 +21,7 @@ db.sequelize= sequelize;
 db.user= require("./user")(sequelize,Sequelize);
 db.reservation = require("./reservation")(sequelize,Sequelize);
 db.evenement = require("./evenement")(sequelize,Sequelize);
-db.evenement.hasMany(db.reservation,{as:"reservations",foreignkey:"eventId"});
+db.evenement.hasMany(db.reservation,{as:"reservations",foreignkey:"evenementId"});
 db.reservation.belongsTo(db.evenement,{
   as:"evenement"
 });
@@ -42,7 +42,6 @@ db.quiz.hasMany(db.question,{as:"question",foreignkey:"quizId"});
 db.question.belongsTo(db.quiz,{
   as:"quiz"
 })
-
 
 
 module.exports = db;

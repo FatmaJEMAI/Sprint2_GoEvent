@@ -1,4 +1,6 @@
 export class evenement{
+
+
   id:number;
   nom_event:string;
   lieux_event:string;
@@ -7,7 +9,7 @@ export class evenement{
   stock_ticket:bigint;
   date:Date
   type_event:string;
-  categorieid:number
+  categorieId:any
 
 
 }

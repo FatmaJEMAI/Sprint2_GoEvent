@@ -8,6 +8,8 @@ module.exports=(sequelize, DataTypes)=>{
     quantite_ticket:{
       type:DataTypes.BIGINT,
 
+
+
     }
 
   });

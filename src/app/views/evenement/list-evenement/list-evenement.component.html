@@ -1,0 +1,64 @@
+<section class="about section-padding " id="section_2" >
+  <div class="text-center">
+      <div class="row">
+          <div class="col-lg-12 col-12 d-flex flex-column">
+              <div class="about-thumb bg-white shadow-lg">
+
+                  <div class="about-info">
+                      <h2 class="mb-3 " >ALL EVENTS</h2>
+                  </div>
+              </div>
+              </div>
+            <div  class="text-center"><br>
+
+
+
+
+
+
+          <table class=" col-lg-12table table-sm text-center" >
+
+            <thead   class="text-center">
+              <th scope="col"> Name Event</th>
+              <th scope="col">Place Event</th>
+              <th scope="col">Description </th>
+              <th scope="col"> Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Date</th>
+              <th scope="col">Type Event</th>
+              <!-- <th scope="col">Id categorie</th> -->
+            </thead> <br>
+            <tbody *ngFor="let evenement of list">
+                <tr>
+                  <td>{{evenement.nom_event}}</td>
+                  <td>{{evenement.lieux_event}}</td>
+                  <td>{{evenement.description}}</td>
+                  <td>{{evenement.prix}}</td>
+                  <td>{{evenement.stock_ticket}}</td>
+                  <td>{{evenement.date}}</td>
+                  <td>{{evenement.type_event}}</td>
+                  <!-- <td>{{evenement.categorieId}}</td><br> -->
+                  <!-- <td>
+
+                    <button (click)="delete(evenement)" class=" btn btn-sm btn-danger">Delete</button>
+                   <button><a class=" btn btn-sm btn-warning" [routerLink]="['evenements/evements/update',evenement.id]" >Update </a></button>
+                  </td> -->
+                   <td>
+                    <a class="btn btn-sm btn-success" [routerLink]="['/updateevenement',evenement.id]" >
+                      Edit
+                    </a> <br>
+                    <button class="btn btn-sm btn-danger" (click)="delete(evenement)">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- </div>
+        </div>
+        </section> -->
+<router-outlet></router-outlet>
+

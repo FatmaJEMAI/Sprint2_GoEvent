@@ -1,0 +1,68 @@
+<section class="about section-padding" id="section_2">
+    <section>
+    <div class= "container">
+        <div class="row">
+
+            <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                <div class="about-image-wrap h-100">
+                    <img src="https://s3u.tmimgcdn.com/800x0/1573393-1608031945056_Presentational-Promotional-Image-1080x1080.jpg" class="img-fluid about-image" alt="">
+
+
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-6 d-flex flex-column">
+
+
+
+
+                <h1> Update reservation</h1>
+  <form #f>
+    <div class="form-group col-md-12">
+
+      <label >Name	</label>
+       <input type="text"  minlength="3" required name="Nom"  [(ngModel)]="reservation.userId	" #inputuserId placeholder="type name here ... " #u="ngModel"  required pattern="[a-z]{3,8}" class="form-control">
+      <div class="alert alert-danger" *ngIf="u.invalid && u.touched" >
+      <p *ngIf="u.hasError('required')"  >this filed is required</p>
+      <p *ngIf="u.hasError('minlength')">minlength is equal to 3</p>
+      </div>
+
+      <label > Event Name </label>
+      <input type="text" class="form-control" name="evenementId " #inputevenementId placeholder="type event here ..." evenementId ="ngModel" required>
+      <!-- <select #inputevenementId class="form-control show-tick" s="ngModel">
+        <option [ngValue]="null" disabled>Select Event</option>
+        <option *ngFor="let evenement of evenementList" [ngValue]="evenement.id">{{evenement.nom_event}}</option>
+      </select> -->
+      <!-- <input type="number" class="form-control" name="evenementId " #inputevenementId placeholder="type event here ..." evenementId ="ngModel" required> -->
+
+      <label >Number of tickets</label>
+      <input type="number" class="form-control" name="quantite_ticket"   #inputquantite_ticket placeholder="type quantity here ..." q="ngModel" required>
+
+      <label >Booking Type </label>
+      <input type="text" class="form-control" name="type de reservation " #inputtype_reservation placeholder="type booking here ..." r ="ngModel" required>
+
+
+    </div>
+
+    <br>
+    <!-- <div class="col-md-12">
+      <button id="reserve" type="submit" name="reserve" class="btn btn-success pull-right">{{"reserve" }}</button>
+  </div> -->
+      <!-- <button  [disabled]="f" class="btn btn-success" (click)="savereservation()"> {{action}}</button> <br> -->
+      <button   class="btn btn-success" (click)="onSubmit()">edite</button> <br>
+   </form>
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+ <router-outlet></router-outlet>
+

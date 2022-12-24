@@ -1,0 +1,142 @@
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- <div class="col-lg-12">
+              <h1 class="page-header">Dashboard</h1>
+          </div> -->
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- /.row -->
+    <div class="row">
+
+      <!-- <div class="panel panel-default"> -->
+
+
+      <!-- /.panel-body -->
+      <!-- </div> -->
+      <!-- /.panel -->
+      <!-- <div class="panel panel-default"> -->
+      <!-- <div class="panel-heading"> -->
+
+
+
+      <!-- /.panel-body -->
+      <!-- </div> -->
+      <!-- /.panel -->
+      <!-- <div class="panel panel-default"> -->
+
+      <!-- /.panel-body -->
+      <!-- </div> -->
+      <!-- /.panel -->
+
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+
+          <!-- /.panel-heading -->
+
+          <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <!-- <div class="panel panel-default"> -->
+
+
+        <!-- /.panel-body -->
+        <!--  -->
+        <!-- /.panel -->
+        <!-- <div class="chat-panel panel panel-default"> -->
+        <!-- <div class="panel-heading"> -->
+        <!-- <i class="fa fa-comments fa-fw"></i>
+                      Chat -->
+        <!-- /.panel-body -->
+        <div class="panel-footer">
+
+          <!-- </div> -->
+          <!-- /.panel-footer -->
+        </div>
+        <!-- /.panel .chat-panel -->
+      </div>
+      <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <h1>{{action}} new Event</h1>
+  <form #f>
+    <div class="form-group col-md-6">
+      <label>Event Name</label>
+      <input type="text" minlength="3" required name="title" [(ngModel)]="evenement.nom_event"
+        #inputnom_event placeholder="type title here ... " #nom_event="ngModel" required pattern="[a-z]{3,8}" class="form-control">
+      <div class="alert alert-danger" *ngIf="nom_event.invalid && nom_event.touched">
+        <p *ngIf="nom_event.hasError('required')">this filed is required</p>
+        <p *ngIf="nom_event.hasError('minlength')">minlength is equal to 3</p>
+      </div>
+    </div>
+
+
+    <div class="form-group col-md-6">
+
+      <label>Event Price</label>
+      <input type="number" class="form-control" name="price" [(ngModel)]="evenement.prix"
+      #inputprix  placeholder="type price here ..." #prix="ngModel" required>
+      <div *ngIf="prix.touched && prix.invalid" class="alert alert-danger">
+        Price is required
+      </div>
+  </div>
+
+  <div class="form-group col-md-6">
+
+    <label>Event place </label>
+    <input type="text" class="form-control" name="lieux_event" [(ngModel)]="evenement.lieux_event"
+       #inputlieux_event placeholder="add place here ..." #lieux_event="" ngModel="">
+
+</div>
+
+<div class="form-group col-md-6">
+  <label >Number of tickets</label>
+  <input type="number" class="form-control" name="quantite_ticket"  placeholder="type quantity here ..." quantite_ticket="ngModel" required #inputstock_ticket>
+
+
+
+</div>
+<div class="form-group col-md-6">
+  <label>Event Type</label>
+        <input type="text" required name="quantity" [(ngModel)]="evenement.type_event"
+          #inputtype_event placeholder="type quantity here ... " #type_event="ngModel" class="form-control">
+        <div class="alert alert-danger" *ngIf="type_event.invalid && type_event.touched">
+
+</div>
+</div>
+<div class="form-group col-md-6">
+  <label>Description</label>
+  <input type="text" required name="description" [(ngModel)]="evenement.description"
+            #inputdescription placeholder="type description here ... " #description="ngModel" class="form-control">
+          <div class="alert alert-danger" *ngIf="description.invalid && description.touched">
+            <p *ngIf="description.hasError('required')">this filed is required</p>
+
+</div>
+</div>
+<div class="form-group col-md-6">
+  <label>Category</label>
+            <select [(ngModel)]="evenement.categorieId"  #inputcategorieId class="form-control show-tick">
+              <!-- <option [ngValue]="null" disabled #inputcategorieId> Select Category</option> -->
+            <option *ngFor="let categorie of categorieList" [ngValue]="categorie.id">
+              {{categorie.nom}}</option>
+            </select>
+</div>
+<br>
+<div class="form-group col-md-6">
+  <label>Date</label>
+                <input type="date" required name="date" [(ngModel)]="evenement.date"
+                  #inputdate placeholder="type quantity here ... " #date="ngModel" class="form-control">
+                <div class="alert alert-danger" *ngIf="date.invalid && date.touched">
+                  <p *ngIf="date.hasError('required')">this filed is required</p>
+                </div>
+</div>
+            <br>
+            <button   class="btn btn-success" (click)="saveEvenement()"> {{action}}</button> <br>
+
+
+
+            <router-outlet></router-outlet>
